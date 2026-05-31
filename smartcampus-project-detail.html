@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Campus Web App — A comprehensive campus management web application built with Spring Boot.">
+    <meta name="keywords" content="Smart Campus, Web Application, Spring Boot, Java, MySQL, Thymeleaf, HTML5, CSS3, JavaScript, Maven">
+    <meta name="author" content="Kalana Dinuja">
+    <title>Smart Campus Web App — Kalana Dinuja</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+    <!-- ============ GALAXY BACKGROUND ============ -->
+    <div class="galaxy-bg">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+        <canvas id="galaxy-canvas"></canvas>
+        <canvas id="drift-stars-canvas"></canvas>
+    </div>
+
+    <!-- ============ GEOMETRIC DECORATIONS ============ -->
+    <div class="geo-line-left"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="nav-logo">
+                <div class="nav-monogram">KD</div>
+                <span class="nav-name">Kalana Dinuja</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link" data-section="home">
+                    <span class="nav-number">01</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="index.html#about" class="nav-link" data-section="about">
+                    <span class="nav-number">02</span>
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="index.html#skills" class="nav-link" data-section="skills">
+                    <span class="nav-number">03</span>
+                    <span class="nav-text">Skills</span>
+                </a>
+                <a href="index.html#projects" class="nav-link active" data-section="projects">
+                    <span class="nav-number">04</span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="index.html#contact" class="nav-link" data-section="contact">
+                    <span class="nav-number">05</span>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ MOBILE NAVIGATION ============ -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html#home" class="mobile-nav-link">
+            <span class="nav-number">01</span> Home
+        </a>
+        <a href="index.html#about" class="mobile-nav-link">
+            <span class="nav-number">02</span> About
+        </a>
+        <a href="index.html#skills" class="mobile-nav-link">
+            <span class="nav-number">03</span> Skills
+        </a>
+        <a href="index.html#projects" class="mobile-nav-link">
+            <span class="nav-number">04</span> Projects
+        </a>
+        <a href="index.html#contact" class="mobile-nav-link">
+            <span class="nav-number">05</span> Contact
+        </a>
+    </div>
+
+    <!-- ============ LEFT SIDEBAR ============ -->
+    <div class="sidebar-social">
+        <a href="https://github.com/kalanadinuja" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kalana-dinuja-19530634b" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/just_dinuu/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+        </a>
+        <a href="mailto:kalanadinuja@gmail.com" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- ============ PROJECT DETAIL CONTENT ============ -->
+    <main class="pd-main">
+
+        <!-- Back to Projects -->
+        <div class="pd-back-link fade-in">
+            <a href="index.html#projects">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+                Back to Projects
+            </a>
+        </div>
+
+        <!-- ============ PROJECT HERO ============ -->
+        <section class="pd-hero">
+            <div class="geo-circle geo-circle-5"></div>
+            <div class="geo-dots geo-dots-5"></div>
+            <div class="geo-node geo-node-5"></div>
+
+            <div class="pd-hero-content">
+                <div class="pd-hero-left fade-in-left">
+                    <div class="pd-featured-label">
+                        <span class="pd-featured-dot"></span>
+                        <span>Featured Project</span>
+                    </div>
+                    <h1 class="pd-project-title">SMART CAMPUS<br>WEB APP</h1>
+                    <p class="pd-project-desc">A comprehensive campus management web application built with Spring Boot that enables universities to manage students, faculty, facilities, and campus services through a centralized digital platform.</p>
+                    <div class="pd-buttons">
+                        <a href="#" class="btn-primary" target="_blank">
+                            Live Demo
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/kalanadinuja/Smart-Campus-Operations-Hub.git" class="btn-secondary" target="_blank">
+                            View on GitHub
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="pd-hero-right fade-in-right">
+                    <div class="pd-hero-image">
+                        <img src="assets/SmartCampus/Screenshot 2026-04-30 231108.png" alt="Smart Campus Web App Main Screenshot">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ OVERVIEW & TECHNOLOGIES ============ -->
+        <section class="pd-section pd-info-section">
+            <div class="pd-info-grid">
+                <div class="pd-info-block fade-in-left">
+                    <div class="section-label">
+                        <span>Overview</span>
+                    </div>
+                    <p class="pd-info-text">Smart Campus is a web-based university management platform built with Spring Boot that digitalizes campus operations including student management, facility booking, course management, and campus announcements.</p>
+                </div>
+                <div class="pd-info-block fade-in-right">
+                    <div class="section-label">
+                        <span>Technologies Used</span>
+                    </div>
+                    <div class="pd-tech-tags">
+                        <span class="pd-tech-tag">Spring Boot</span>
+                        <span class="pd-tech-tag">Java</span>
+                        <span class="pd-tech-tag">MySQL</span>
+                        <span class="pd-tech-tag">Thymeleaf</span>
+                        <span class="pd-tech-tag">HTML5</span>
+                        <span class="pd-tech-tag">CSS3</span>
+                        <span class="pd-tech-tag">JavaScript</span>
+                        <span class="pd-tech-tag">Maven</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KEY FEATURES & MY ROLE ============ -->
+        <section class="pd-section pd-features-section">
+            <div class="pd-info-grid">
+                <div class="pd-info-block fade-in-left">
+                    <div class="section-label">
+                        <span>Key Features</span>
+                    </div>
+                    <ul class="pd-feature-list">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Student and faculty management
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Course and timetable management
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Campus facility booking system
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Announcements and notice board
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Admin dashboard
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Responsive web interface
+                        </li>
+                    </ul>
+                </div>
+                <div class="pd-info-block fade-in-right">
+                    <div class="section-label">
+                        <span>My Role</span>
+                    </div>
+                    <p class="pd-info-text">I designed and developed the entire web application including backend API development, database design, and frontend implementation.</p>
+                    <ul class="pd-role-list">
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Full Stack Development
+                        </li>
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Backend Development with Spring Boot
+                        </li>
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Database Design
+                        </li>
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            UI/UX Design
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECT SCREENSHOTS ============ -->
+        <section class="pd-section pd-screenshots-section">
+            <div class="section-label fade-in">
+                <span>Project Screenshots</span>
+            </div>
+            <div class="pd-screenshots-grid" id="screenshotsGrid">
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-19 133924.png" alt="Smart Campus Screenshot 1" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-21 174105.png" alt="Smart Campus Screenshot 2" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231108.png" alt="Smart Campus Screenshot 3" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231121.png" alt="Smart Campus Screenshot 4" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231447.png" alt="Smart Campus Screenshot 5" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231702.png" alt="Smart Campus Screenshot 6" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231859.png" alt="Smart Campus Screenshot 7" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231908.png" alt="Smart Campus Screenshot 8" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 231931.png" alt="Smart Campus Screenshot 9" loading="lazy">
+                </div>
+                <div class="pd-screenshot-item fade-in">
+                    <img src="assets/SmartCampus/Screenshot 2026-04-30 233616.png" alt="Smart Campus Screenshot 10" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CHALLENGES & WHAT I LEARNED ============ -->
+        <section class="pd-section pd-reflection-section">
+            <div class="pd-info-grid">
+                <div class="pd-info-block fade-in-left">
+                    <div class="section-label">
+                        <span>Challenges</span>
+                    </div>
+                    <ul class="pd-challenges-list">
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Designing a scalable backend architecture for multiple campus modules
+                        </li>
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Managing complex relationships between students, courses, and facilities in MySQL
+                        </li>
+                    </ul>
+                </div>
+                <div class="pd-info-block fade-in-right">
+                    <div class="section-label">
+                        <span>What I Learned</span>
+                    </div>
+                    <ul class="pd-challenges-list">
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Improved Spring Boot and Java backend development skills
+                        </li>
+                        <li>
+                            <span class="pd-role-dot"></span>
+                            Better understanding of enterprise web application architecture and database design
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BOTTOM NAVIGATION ============ -->
+        <div class="pd-bottom-nav fade-in">
+            <a href="habitnow-project-detail.html" class="pd-nav-prev">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+                Previous Project
+            </a>
+            <div class="pd-nav-dots">
+                <span class="pd-dot"></span>
+                <span class="pd-dot"></span>
+                <span class="pd-dot"></span>
+                <span class="pd-dot active"></span>
+            </div>
+            <a href="#" class="pd-nav-next">
+                Next Project
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                &copy; <span id="current-year">2025</span> Kalana Dinuja. All rights reserved.
+            </div>
+            <div class="footer-center">
+                <span class="footer-dot"></span>
+            </div>
+            <div class="footer-right">
+                Designed &amp; Developed by <span>Kalana Dinuja</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ ORION CURSOR ============ -->
+    <canvas id="orion-canvas"></canvas>
+
+    <!-- JavaScript -->
+    <script src="drift-stars.js"></script>
+    <script src="script.js"></script>
+    <script src="project-detail.js"></script>
+</body>
+</html>

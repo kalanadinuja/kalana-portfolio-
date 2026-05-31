@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kalana Dinuja — Full Stack Developer portfolio. A 3rd year IT student at SLIIT Sri Lanka specializing in building clean, efficient, and user-centric web solutions.">
+    <meta name="keywords" content="Kalana Dinuja, Full Stack Developer, Web Developer, SLIIT, Portfolio, Sri Lanka">
+    <meta name="author" content="Kalana Dinuja">
+    <title>Kalana Dinuja — Full Stack Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============ INTRO OVERLAY ============ -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">KD</div>
+            <div class="intro-name">Kalana Dinuja</div>
+        </div>
+        <div class="portal-ring"></div>
+    </div>
+
+    <!-- ============ GALAXY BACKGROUND ============ -->
+    <div class="galaxy-bg">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+        <canvas id="three-canvas"></canvas>
+        <canvas id="drift-stars-canvas"></canvas>
+    </div>
+
+    <!-- ============ GEOMETRIC DECORATIONS ============ -->
+    <div class="geo-line-left"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="nav-monogram">KD</div>
+                <span class="nav-name">Kalana Dinuja</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-number">01</span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-number">02</span>
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <span class="nav-number">03</span>
+                    <span class="nav-text">Skills</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-number">04</span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-number">05</span>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#home" class="mobile-nav-link">
+            <span class="nav-number">01</span> Home
+        </a>
+        <a href="#about" class="mobile-nav-link">
+            <span class="nav-number">02</span> About
+        </a>
+        <a href="#skills" class="mobile-nav-link">
+            <span class="nav-number">03</span> Skills
+        </a>
+        <a href="#projects" class="mobile-nav-link">
+            <span class="nav-number">04</span> Projects
+        </a>
+        <a href="#contact" class="mobile-nav-link">
+            <span class="nav-number">05</span> Contact
+        </a>
+
+        <!-- Social Icons for Mobile -->
+        <div style="display:flex; gap:32px; margin-top:40px;">
+            <a href="https://github.com/kalanadinuja" target="_blank" style="color:rgba(255,255,255,0.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kalana-dinuja-19530634b" target="_blank" style="color:rgba(255,255,255,0.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/just_dinuu/" target="_blank" style="color:rgba(255,255,255,0.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+            </a>
+            <a href="mailto:kalanadinuja@gmail.com" style="color:rgba(255,255,255,0.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+
+    
+
+    <!-- ============ LEFT SIDEBAR ============ -->
+    <div class="sidebar-social">
+        <a href="https://github.com/kalanadinuja" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kalana-dinuja-19530634b" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/just_dinuu/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+        </a>
+        <a href="mailto:kalanadinuja@gmail.com" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="home">
+        <!-- Geometric decorations -->
+        <div class="geo-circle geo-circle-1"></div>
+        <div class="geo-circle geo-circle-2"></div>
+        <div class="geo-dots geo-dots-1"></div>
+        <div class="geo-dots geo-dots-2"></div>
+        <div class="geo-node geo-node-1"></div>
+        <div class="geo-node geo-node-2"></div>
+        <div class="geo-node geo-node-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-left fade-in">
+                <div class="hero-label">
+                    <div class="hero-label-line"></div>
+                    <span>Hello, I'm</span>
+                </div>
+                <h1 class="hero-name">Kalana<br>Dinuja</h1>
+                <p class="hero-title">IT UNDERGRADUATE</p>
+                <p class="hero-description">Driven by technology, problem solving, and building solutions that create real value.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        View My Work
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7 7 17 7 17 17"/>
+                        </svg>
+                    </a>
+                    <a href="assets/CV Kalana Dinuja.pdf" download class="btn-secondary">
+                        Download CV
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div id="hero-social-mobile" style="gap:28px; margin-top:32px; align-items:center;">
+                    <a href="https://github.com/kalanadinuja" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kalana-dinuja-19530634b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/just_dinuu/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:kalanadinuja@gmail.com" aria-label="Email">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                
+            </div>
+            <div class="hero-right fade-in-right">
+                <div class="available-badge">
+                    <span class="badge-dot"></span>
+                    Available for Work
+                </div>
+                <div class="profile-frame">
+                    <div class="profile-diag-1"></div>
+                    <div class="profile-diag-2"></div>
+                    <div class="profile-ring"></div>
+                    <img src="assets/profile.png" alt="Kalana Dinuja" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about" id="about">
+        <div class="geo-circle geo-circle-3"></div>
+        <div class="geo-dots geo-dots-3"></div>
+        <div class="geo-node geo-node-4"></div>
+
+        <div class="about-container">
+            <div class="about-left fade-in-left">
+                <div class="section-label">
+                    <span>About Me</span>
+                </div>
+                <h2 class="section-title">Crafting Digital<br>Experiences</h2>
+                <div class="about-text">
+                    <p>I'm a 3rd year Information Technology undergraduate at SLIIT, Sri Lanka, with a strong interest in software engineering and modern web technologies. I enjoy building practical digital solutions while continuously expanding my skills across different areas of software development.</p>
+                    <p>Through my academic journey and personal projects, I have developed experience in software development, problem solving, and teamwork. I am always eager to learn new technologies and apply my skills to create practical and effective digital solutions.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Years Learning</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right fade-in-right">
+                <div class="about-illustration">
+                    <img src="assets/about-statue.jpg" alt="About Illustration" class="about-illustration-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section class="skills" id="skills">
+        <div class="geo-circle geo-circle-4"></div>
+        <div class="geo-dots geo-dots-4"></div>
+
+        <div class="skills-container">
+            <div class="section-header fade-in">
+                <div class="section-label">
+                    <span>My Skills</span>
+                </div>
+                <h2 class="section-title">Technologies &<br>Tools I Use</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- HTML/CSS -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">HTML / CSS</h3>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 17V10"/>
+                            <path d="M9 10c0 0 0-3 3-3"/>
+                            <path d="M15 7v7c0 1.5-1 3-3 3"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                </div>
+
+                <!-- React -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="2.5"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">React</h3>
+                </div>
+
+                <!-- Node.js -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/>
+                            <path d="M12 22V12"/>
+                            <path d="M2 7l10 5"/>
+                            <path d="M22 7l-10 5"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Node.js</h3>
+                </div>
+
+                <!-- PHP -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="12" rx="10" ry="6"/>
+                            <path d="M7 12h2l1-4h2"/>
+                            <path d="M13 8h2c1 0 2 1 2 2s-1 2-2 2h-2"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">PHP</h3>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                            <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+                            <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">MySQL</h3>
+                </div>
+
+                <!-- Git -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="18" r="3"/>
+                            <circle cx="6" cy="6" r="3"/>
+                            <path d="M6 21V9a9 9 0 0 0 9 9"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Git</h3>
+                </div>
+
+                <!-- Figma -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
+                            <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
+                            <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
+                            <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/>
+                            <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Figma</h3>
+                </div>
+                <!-- C -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 0-8 0v8a6 6 0 0 0 8 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">C</h3>
+                </div>
+
+                <!-- C++ -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 8a6 6 0 0 0-8 0v8a6 6 0 0 0 8 0"/>
+                            <line x1="14" y1="12" x2="18" y2="12"/>
+                            <line x1="16" y1="10" x2="16" y2="14"/>
+                            <line x1="19" y1="12" x2="23" y2="12"/>
+                            <line x1="21" y1="10" x2="21" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">C++</h3>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2c-5.5 0-5.5 2.5-5.5 2.5v3h5.5v1h-7c-1.5 0-2 1.5-2 3v3c0 1.5 1 2.5 2.5 2.5h1.5v-2.5c0-1.5 1.5-3 3-3h4c1.5 0 3-1.5 3-3v-4c0-1.5-1.5-2.5-5-2.5z"/>
+                            <path d="M12 22c5.5 0 5.5-2.5 5.5-2.5v-3h-5.5v-1h7c1.5 0 2-1.5 2-3v-3c0-1.5-1-2.5-2.5-2.5h-1.5v2.5c0 1.5-1.5 3-3 3h-4c-1.5 0-3 1.5-3 3v4c0 1.5 1.5 2.5 5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                </div>
+
+                <!-- MERN Stack -->
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                            <polyline points="2 12 12 17 22 12"/>
+                            <polyline points="2 17 12 22 22 17"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">MERN Stack</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section class="projects" id="projects">
+        <div class="geo-circle geo-circle-5"></div>
+        <div class="geo-dots geo-dots-5"></div>
+        <div class="geo-node geo-node-5"></div>
+
+        <div class="projects-container">
+            <div class="projects-header">
+                <div class="projects-header-left fade-in-left">
+                    <div class="section-label">
+                        <span>My Work</span>
+                    </div>
+                    <h2 class="section-title">Featured<br>Projects</h2>
+                    <p class="projects-subtitle">A selection of projects where I apply my skills to solve real-world problems.</p>
+                </div>
+                <div class="project-filters fade-in-right">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1: Library Management System -->
+                <a href="project-detail.html" class="project-card fade-in" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="assets/Libary Mangement/Screenshot 2026-05-30 113316.png" alt="Library Management System" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-name">Library Management System</h3>
+                        <p class="project-desc">A full stack web application for managing library books, members, and borrowing records built with the MERN stack.</p>
+                        <span class="project-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project 2: E-GAS Distribution Service -->
+                <a href="egas-project-detail.html" class="project-card fade-in" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="assets/E-GAS webapp/home page.png" alt="E-GAS Distribution Service" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-name">E-GAS Distribution Service</h3>
+                        <p class="project-desc">A full stack web application for managing and distributing gas services efficiently, built with the MERN stack.</p>
+                        <span class="project-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project 3: HabitNow -->
+                <a href="habitnow-project-detail.html" class="project-card fade-in" data-category="mobileapp">
+                    <div class="project-image">
+                        <img src="assets/HabitNow/fdfg.png" alt="HabitNow Mobile App" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Mobile App</span>
+                        <h3 class="project-name">HabitNow</h3>
+                        <p class="project-desc">A modern Android mobile application designed to help users build and track daily habits with a clean and intuitive interface, built using Kotlin.</p>
+                        <span class="project-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project 4: Smart Campus -->
+                <a href="smartcampus-project-detail.html" class="project-card fade-in" data-category="webapp">
+                    <div class="project-image">
+                        <img src="assets/SmartCampus/Screenshot 2026-04-30 231108.png" alt="Smart Campus Web App" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Web Application</span>
+                        <h3 class="project-name">Smart Campus</h3>
+                        <p class="project-desc">A smart campus management web application built using Spring Boot framework to manage university facilities, students, and campus services efficiently.</p>
+                        <span class="project-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"/>
+                                <polyline points="7 7 17 7 17 17"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact" id="contact">
+        <div class="geo-circle geo-circle-6"></div>
+        <div class="geo-dots geo-dots-6"></div>
+        <div class="geo-node geo-node-6"></div>
+
+        <div class="contact-container">
+            <div class="contact-left fade-in-left">
+                <div class="section-label">
+                    <span>Get In Touch</span>
+                </div>
+                <h2 class="section-title">Let's Work<br>Together</h2>
+                <p class="contact-description">Have a project in mind or want to say hello? Feel free to reach out. I'm always open to discussing new opportunities and ideas.</p>
+            </div>
+
+            <div class="contact-right fade-in-right">
+                <div class="contact-info-grid">
+                    <!-- Email -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-value">kalanadinuja@gmail.com</div>
+                        <div class="contact-label">Email</div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-value">077 64 89 261</div>
+                        <div class="contact-label">Phone</div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-value">Sri Lanka</div>
+                        <div class="contact-label">Location</div>
+                    </div>
+
+                    <!-- Available for Work -->
+                    <div class="contact-card highlight">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="contact-value">Available for Work</div>
+                        <div class="contact-label">Full-time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner fade-in">
+            <div class="cta-left">
+                <div class="cta-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7 7 17 7 17 17"/>
+                    </svg>
+                </div>
+                <h3 class="cta-text">Let's create something amazing together.</h3>
+            </div>
+            <a href="mailto:kalanadinuja@gmail.com" class="btn-primary cta-btn">
+                Let's Talk
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"/>
+                    <polyline points="7 7 17 7 17 17"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                &copy; <span id="current-year">2025</span> Kalana Dinuja. All rights reserved.
+            </div>
+            <div class="footer-center">
+                <span class="footer-dot"></span>
+            </div>
+            <div class="footer-right">
+                Designed &amp; Developed by <span>Kalana Dinuja</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ ORION CURSOR ============ -->
+    <canvas id="orion-canvas"></canvas>
+
+    <!-- GSAP & Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="drift-stars.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
