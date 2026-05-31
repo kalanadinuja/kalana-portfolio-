@@ -6,7 +6,7 @@
 
 My personal developer portfolio website showcasing my projects, skills, and experience as a Full Stack Developer and IT undergraduate at SLIIT.
 
-**Live Demo:** [kalana-dinuja.Portfolio](https://kalanadinuja.github.io/portfolio/) 
+**Live Demo:** [kalana-dinuja.Portfolio](https://kalanadinuja.github.io/kalana-portfolio-/) 
 ---
 
 ## 📖 Overview
