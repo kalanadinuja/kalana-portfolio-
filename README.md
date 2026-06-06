@@ -1,4 +1,4 @@
-# Kalana Dinuja – Full Stack Developer Portfolio
+# Kalana Dinuja – Portfolio
 
 ![Portfolio Website](https://img.shields.io/badge/Portfolio-Kalana_Dinuja-blue?style=for-the-badge&logo=react&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white)
