@@ -4,14 +4,14 @@
 ![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=for-the-badge&logo=vercel&logoColor=white)
 
-My personal developer portfolio website showcasing my projects, skills, and experience as a Full Stack Developer and IT undergraduate at SLIIT.
+My personal developer portfolio website showcasing my projects, skills, and experience as a developer and IT undergraduate at SLIIT.
 
 **Live Demo:** [kalana-dinuja.Portfolio link](https://kalanadinuja.github.io/kalana-portfolio-/)  
 ---
 
 ## 📖 Overview
 
-This is my personal portfolio website built to highlight my journey as a Full Stack Developer. It includes information about my technical skills, featured projects, education (SLIIT), and ways to contact me. The site is fully responsive and designed with a modern, clean aesthetic.
+This is my personal portfolio website built to highlight my journey as a Developer. It includes information about my technical skills, featured projects, education (SLIIT), and ways to contact me. The site is fully responsive and designed with a modern, clean aesthetic.
 
 ## 🛠 Technologies Used
 
